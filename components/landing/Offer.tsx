@@ -11,7 +11,7 @@ const features = [
 
 export default function Offer() {
   return (
-    <section id="oferta" style={{ background: 'var(--fg-green-900)', padding: '100px 0', position: 'relative', overflow: 'hidden' }}>
+    <section id="oferta" className="section-py" style={{ background: 'var(--fg-green-900)', position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: 700, height: 700, background: 'radial-gradient(circle, rgba(63,183,188,0.2) 0%, transparent 60%)' }} />
       <div className="wrap">
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center', position: 'relative', zIndex: 1 }} className="offer-grid">
@@ -28,7 +28,7 @@ export default function Offer() {
 
             <div style={{ margin: '32px 0' }}>
               <div style={{ fontFamily: 'var(--font-ui)', fontSize: 15, color: 'rgba(251,246,238,0.4)', textDecoration: 'line-through' }}>De R$ 239,90</div>
-              <div style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 72, fontWeight: 600, color: 'var(--fg-cyan-300)', lineHeight: 1 }}>R$ 179,90</div>
+              <div className="offer-price" style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 72, fontWeight: 600, color: 'var(--fg-cyan-300)', lineHeight: 1 }}>R$ 179,90</div>
               <div style={{ fontFamily: 'var(--font-ui)', fontSize: 14, color: 'rgba(251,246,238,0.6)', marginTop: 4 }}>ou 6× de R$ 29,98 sem juros · ou PIX com desconto adicional</div>
             </div>
 
@@ -77,7 +77,10 @@ export default function Offer() {
           </div>
         </div>
       </div>
-      <style>{`@media(max-width:768px){.offer-grid{grid-template-columns:1fr!important}}`}</style>
+      <style>{`
+        @media(max-width:768px){.offer-grid{grid-template-columns:1fr!important;gap:40px!important}}
+        @media(max-width:600px){.offer-price{font-size:52px!important}}
+      `}</style>
     </section>
   );
 }

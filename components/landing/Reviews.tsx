@@ -37,7 +37,7 @@ const Star = () => (
 
 export default function Reviews() {
   return (
-    <section style={{ background: 'var(--fg-cream)', padding: '100px 0' }}>
+    <section className="section-py" style={{ background: 'var(--fg-cream)' }}>
       <div className="wrap">
         <div style={{ marginBottom: 56 }}>
           <span className="eyebrow">Nossos Clientes</span>
@@ -71,7 +71,27 @@ export default function Reviews() {
           Depoimentos reais de clientes. Resultados individuais podem variar.
         </p>
       </div>
-      <style>{`@media(max-width:768px){.rv-grid{grid-template-columns:1fr!important}}`}</style>
+      <style>{`
+        @media(max-width:768px){
+          .rv-grid{
+            display:flex!important;
+            overflow-x:auto;
+            scroll-snap-type:x mandatory;
+            -webkit-overflow-scrolling:touch;
+            gap:16px!important;
+            padding-bottom:16px;
+            margin:0 -20px;
+            padding-left:20px;
+            padding-right:20px;
+          }
+          .rv-grid>*{
+            min-width:280px;
+            max-width:300px;
+            scroll-snap-align:start;
+            flex-shrink:0;
+          }
+        }
+      `}</style>
     </section>
   );
 }

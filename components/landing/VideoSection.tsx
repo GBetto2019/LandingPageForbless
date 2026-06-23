@@ -1,10 +1,10 @@
 export default function VideoSection() {
   return (
-    <section style={{ background: 'var(--fg-green-800)', padding: '100px 0', position: 'relative', overflow: 'hidden' }}>
+    <section className="section-py" style={{ background: 'var(--fg-green-800)', position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', bottom: '-20%', left: '-5%', width: 500, height: 500, background: 'radial-gradient(circle, rgba(63,183,188,0.15) 0%, transparent 65%)' }} />
       <div className="wrap">
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center', position: 'relative', zIndex: 1 }} className="video-grid">
-          <div>
+          <div className="video-content">
             <span className="eyebrow eyebrow--cream">Veja na prática</span>
             <h3 className="h3" style={{ color: 'var(--fg-cream)', marginTop: 16 }}>Veja como faz parte<br />da rotina.</h3>
             <p className="lede" style={{ color: 'rgba(251,246,238,0.75)', marginTop: 20 }}>
@@ -15,7 +15,7 @@ export default function VideoSection() {
             </p>
           </div>
 
-          <div style={{ aspectRatio: '16/9', borderRadius: 'var(--r-xl)', overflow: 'hidden', position: 'relative', background: 'var(--fg-green-900)' }}>
+          <div className="video-media" style={{ aspectRatio: '16/9', borderRadius: 'var(--r-xl)', overflow: 'hidden', position: 'relative', background: 'var(--fg-green-900)' }}>
             <video
               controls
               preload="metadata"
@@ -30,7 +30,12 @@ export default function VideoSection() {
           </div>
         </div>
       </div>
-      <style>{`@media(max-width:768px){.video-grid{grid-template-columns:1fr!important}}`}</style>
+      <style>{`
+        @media(max-width:768px){
+          .video-grid{grid-template-columns:1fr!important;gap:40px!important}
+          .video-media{order:-1!important}
+        }
+      `}</style>
     </section>
   );
 }

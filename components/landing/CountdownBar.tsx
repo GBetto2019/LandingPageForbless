@@ -68,6 +68,11 @@ export default function CountdownBar({ targetISO }: { targetISO?: string }) {
   ];
 
   return (
+    <>
+    <style>{`
+      @media(max-width:640px){ .cd-label { display:none!important; } }
+      @media(max-width:420px){ .cd-cta { display:none!important; } }
+    `}</style>
     <div
       id="countdown-bar"
       role="banner"
@@ -97,10 +102,12 @@ export default function CountdownBar({ targetISO }: { targetISO?: string }) {
         href={CHECKOUT_URL}
         target="_blank"
         rel="noopener noreferrer"
+        className="cd-cta"
         style={{ background: 'var(--fg-green-900)', color: '#1DF300', borderRadius: 'var(--r-pill)', padding: '9px 20px', fontFamily: 'var(--font-ui)', fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', whiteSpace: 'nowrap', textDecoration: 'none' }}
       >
         Garantir agora
       </a>
     </div>
+    </>
   );
 }

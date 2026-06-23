@@ -1,6 +1,7 @@
 export default function Footer() {
   return (
-    <footer style={{ background: 'var(--fg-green-900)', color: 'var(--fg-cream)', padding: '72px 0 32px' }}>
+    <footer className="site-footer" style={{ background: 'var(--fg-green-900)', color: 'var(--fg-cream)', padding: '72px 0 32px' }}>
+      <style>{`@media(max-width:640px){.site-footer{padding:48px 0 32px!important}.site-footer .wrap>div:first-child{padding-bottom:32px!important}}`}</style>
       <div className="wrap">
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', paddingBottom: 40, borderBottom: '1px solid rgba(251,246,238,0.1)' }}>
           {/* Logo fallback */}

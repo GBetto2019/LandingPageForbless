@@ -51,7 +51,7 @@ export default function LeadForm() {
   };
 
   return (
-    <section id="cupom" style={{ background: 'var(--fg-blush)', padding: '100px 0' }}>
+    <section id="cupom" className="section-py" style={{ background: 'var(--fg-blush)' }}>
       <div className="wrap">
         <div style={{ background: 'var(--fg-green-900)', borderRadius: 'var(--r-xl)', padding: '72px 80px', maxWidth: 900, margin: '0 auto', position: 'relative', overflow: 'hidden' }} className="lead-card">
           <div style={{ position: 'absolute', bottom: '-30%', right: '-10%', width: 480, height: 480, background: 'radial-gradient(circle, rgba(63,183,188,0.18) 0%, transparent 65%)' }} />

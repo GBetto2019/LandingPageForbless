@@ -13,7 +13,7 @@ const stats = [
 
 export default function Pain() {
   return (
-    <section style={{ background: 'var(--fg-sand)', padding: '100px 0' }}>
+    <section className="section-py" style={{ background: 'var(--fg-sand)' }}>
       <div className="wrap">
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }} className="pain-grid">
           <div>
@@ -46,7 +46,7 @@ export default function Pain() {
           </div>
         </div>
       </div>
-      <style>{`@media(max-width:768px){.pain-grid{grid-template-columns:1fr!important}}`}</style>
+      <style>{`@media(max-width:768px){.pain-grid{grid-template-columns:1fr!important;gap:40px!important}}`}</style>
     </section>
   );
 }

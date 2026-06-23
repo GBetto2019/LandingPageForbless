@@ -7,7 +7,7 @@ const chips = [
 
 export default function Solution() {
   return (
-    <section style={{ background: 'var(--fg-green-900)', color: 'var(--fg-cream)', padding: '100px 0', position: 'relative', overflow: 'hidden' }}>
+    <section className="section-py" style={{ background: 'var(--fg-green-900)', color: 'var(--fg-cream)', position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', top: '-20%', right: '-5%', width: 600, height: 600, background: 'radial-gradient(circle, rgba(63,183,188,0.18) 0%, transparent 60%)', pointerEvents: 'none' }} />
       <div className="wrap">
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center', position: 'relative', zIndex: 1 }} className="solution-grid">
@@ -37,7 +37,7 @@ export default function Solution() {
         </div>
       </div>
       <style>{`
-        @media(max-width:768px){.solution-grid{grid-template-columns:1fr!important}.solution-chips{grid-template-columns:1fr!important}}
+        @media(max-width:768px){.solution-grid{grid-template-columns:1fr!important;gap:40px!important}}
       `}</style>
     </section>
   );

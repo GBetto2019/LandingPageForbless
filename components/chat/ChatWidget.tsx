@@ -77,7 +77,7 @@ export default function ChatWidget() {
     <>
       {/* Bubble */}
       {showBubble && !open && (
-        <div style={{ position: 'fixed', bottom: 100, right: 28, zIndex: 90, background: 'var(--fg-paper)', borderRadius: '16px 16px 0 16px', padding: '14px 18px', boxShadow: 'var(--sh-3)', fontFamily: 'var(--font-ui)', fontSize: 13, fontWeight: 500, color: 'var(--fg-green-900)', maxWidth: 220, lineHeight: 1.4, animation: 'fadeInRight 0.6s var(--ease-out) 2s both' }}>
+        <div className="chat-bubble" style={{ position: 'fixed', bottom: 100, right: 28, zIndex: 90, background: 'var(--fg-paper)', borderRadius: '16px 16px 0 16px', padding: '14px 18px', boxShadow: 'var(--sh-3)', fontFamily: 'var(--font-ui)', fontSize: 13, fontWeight: 500, color: 'var(--fg-green-900)', maxWidth: 220, lineHeight: 1.4, animation: 'fadeInRight 0.6s var(--ease-out) 2s both' }}>
           Oi! Posso te ajudar com dúvidas sobre o kit de 90 dias? 💬
         </div>
       )}
@@ -174,7 +174,7 @@ export default function ChatWidget() {
       </div>
 
       {/* Trigger button */}
-      <div style={{ position: 'fixed', bottom: 28, right: 28, zIndex: 90, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 12 }}>
+      <div className="chat-trigger-wrap" style={{ position: 'fixed', bottom: 28, right: 28, zIndex: 90, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 12 }}>
         <button
           className="chat-btn"
           onClick={() => { setOpen(o => !o); setShowBubble(false); }}
@@ -190,7 +190,15 @@ export default function ChatWidget() {
 
       <style>{`
         @keyframes dot-bounce { 0%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-6px)} }
-        @media(max-width:480px){.chat-panel-responsive{width:calc(100vw - 24px)!important;right:12px!important;bottom:92px!important;max-height:72vh!important}}
+        @media(max-width:768px){
+          .chat-trigger-wrap{bottom:84px!important}
+          .chat-bubble{bottom:160px!important}
+        }
+        @media(max-width:480px){
+          .chat-panel-responsive{width:calc(100vw - 24px)!important;right:12px!important;bottom:160px!important;max-height:65vh!important}
+          .chat-trigger-wrap{right:12px!important}
+          .chat-bubble{right:12px!important}
+        }
       `}</style>
     </>
   );

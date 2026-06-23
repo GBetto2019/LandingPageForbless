@@ -41,7 +41,7 @@ const items = [
 export default function TrustStrip() {
   return (
     <section style={{ background: 'var(--fg-paper)', padding: '28px 0', borderBottom: '1px solid var(--fg-line-soft)' }}>
-      <div className="wrap" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24 }}>
+      <div className="wrap trust-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24 }}>
         {items.map(item => (
           <div key={item.title} style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
             <span style={{ width: 40, height: 40, flexShrink: 0, color: 'var(--fg-cyan-600)', display: 'block' }}>
@@ -54,7 +54,10 @@ export default function TrustStrip() {
           </div>
         ))}
       </div>
-      <style>{`@media(max-width:640px){.wrap{grid-template-columns:1fr 1fr!important}}`}</style>
+      <style>{`
+        @media(max-width:640px){.trust-grid{grid-template-columns:1fr 1fr!important;gap:16px!important}}
+        @media(max-width:380px){.trust-grid{grid-template-columns:1fr!important}}
+      `}</style>
     </section>
   );
 }

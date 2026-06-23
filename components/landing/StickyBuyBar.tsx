@@ -38,7 +38,7 @@ export default function StickyBuyBar({ targetISO }: { targetISO?: string }) {
 
   return (
     <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 80, background: 'var(--fg-paper)', borderTop: '1px solid var(--fg-line)', boxShadow: '0 -8px 32px rgba(7,41,42,0.12)', transform: visible ? 'translateY(0)' : 'translateY(100%)', transition: 'transform 0.4s var(--ease-out)' }}>
-      <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 48px', gap: 24, flexWrap: 'wrap' }}>
+      <div className="wrap sticky-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 48px', gap: 24, flexWrap: 'wrap' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }} className="sticky-product">
           <div style={{ width: 40, height: 40, borderRadius: 'var(--r-sm)', background: 'linear-gradient(155deg, var(--fg-green-100), var(--fg-cyan-300))' }} />
           <div>
@@ -54,14 +54,20 @@ export default function StickyBuyBar({ targetISO }: { targetISO?: string }) {
         </div>
 
         <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-          {timeStr && <span style={{ fontFamily: 'var(--font-ui)', fontSize: 11, color: '#D97706', fontWeight: 600, whiteSpace: 'nowrap' }}>⏳ {timeStr} restando</span>}
+          {timeStr && <span className="sticky-timer" style={{ fontFamily: 'var(--font-ui)', fontSize: 11, color: '#D97706', fontWeight: 600, whiteSpace: 'nowrap' }}>⏳ {timeStr} restando</span>}
           <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
             Comprar agora
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
           </a>
         </div>
       </div>
-      <style>{`@media(max-width:640px){.sticky-product{display:none!important}}`}</style>
+      <style>{`
+        @media(max-width:640px){
+          .sticky-product{display:none!important}
+          .sticky-inner{padding:12px 16px!important;gap:10px!important}
+          .sticky-timer{display:none!important}
+        }
+      `}</style>
     </div>
   );
 }

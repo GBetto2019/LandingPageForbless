@@ -29,7 +29,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="duvidas" style={{ background: 'var(--fg-cream)', padding: '100px 0' }}>
+    <section id="duvidas" className="section-py" style={{ background: 'var(--fg-cream)' }}>
       <div className="wrap">
         <div style={{ textAlign: 'center', maxWidth: 600, margin: '0 auto 56px' }}>
           <span className="eyebrow">Dúvidas frequentes</span>

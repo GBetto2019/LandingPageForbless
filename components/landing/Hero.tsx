@@ -59,19 +59,19 @@ export default function Hero() {
             />
 
             {/* Floating chips */}
-            <div style={{ position: 'absolute', left: 20, top: 28, padding: '14px 18px', background: 'var(--fg-paper)', borderRadius: 'var(--r-md)', boxShadow: 'var(--sh-3)', fontFamily: 'var(--font-ui)', zIndex: 5, display: 'flex', alignItems: 'center', gap: 12, animation: 'floatChip 4s ease-in-out infinite alternate', animationDelay: '0.5s' }}>
+            <div className="hero-chip" style={{ position: 'absolute', left: 20, top: 28, padding: '14px 18px', background: 'var(--fg-paper)', borderRadius: 'var(--r-md)', boxShadow: 'var(--sh-3)', fontFamily: 'var(--font-ui)', zIndex: 5, display: 'flex', alignItems: 'center', gap: 12, animation: 'floatChip 4s ease-in-out infinite alternate', animationDelay: '0.5s' }}>
               <div>
                 <div style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 28, fontWeight: 600, color: 'var(--fg-green-800)', lineHeight: 1 }}>90</div>
                 <div style={{ fontSize: 9, letterSpacing: '0.14em', color: 'var(--fg-ink-3)', textTransform: 'uppercase', marginTop: 3 }}>dias de ciclo</div>
               </div>
             </div>
 
-            <div style={{ position: 'absolute', right: 20, bottom: '26%', background: 'var(--fg-green-900)', color: 'var(--fg-cream)', padding: '14px 18px', borderRadius: 'var(--r-md)', display: 'flex', flexDirection: 'column', gap: 3, zIndex: 5, animation: 'floatChip 4s ease-in-out infinite alternate', animationDelay: '1.2s', boxShadow: 'var(--sh-3)' }}>
+            <div className="hero-chip" style={{ position: 'absolute', right: 20, bottom: '26%', background: 'var(--fg-green-900)', color: 'var(--fg-cream)', padding: '14px 18px', borderRadius: 'var(--r-md)', display: 'flex', flexDirection: 'column', gap: 3, zIndex: 5, animation: 'floatChip 4s ease-in-out infinite alternate', animationDelay: '1.2s', boxShadow: 'var(--sh-3)' }}>
               <div style={{ fontFamily: 'var(--font-ui)', fontSize: 9, letterSpacing: '0.14em', color: 'var(--fg-cyan-300)', textTransform: 'uppercase' }}>Kit Completo</div>
               <div style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 18, lineHeight: 1 }}>3 potes</div>
             </div>
 
-            <div style={{ position: 'absolute', left: '50%', bottom: 18, transform: 'translateX(-50%)', background: 'var(--fg-green-100)', border: '1px solid var(--fg-green-300)', padding: '8px 16px', borderRadius: 'var(--r-md)', whiteSpace: 'nowrap', zIndex: 5 }}>
+            <div className="hero-chip" style={{ position: 'absolute', left: '50%', bottom: 18, transform: 'translateX(-50%)', background: 'var(--fg-green-100)', border: '1px solid var(--fg-green-300)', padding: '8px 16px', borderRadius: 'var(--r-md)', whiteSpace: 'nowrap', zIndex: 5 }}>
               <span style={{ fontFamily: 'var(--font-ui)', fontSize: 10, fontWeight: 600, color: 'var(--fg-green-700)', letterSpacing: '0.06em' }}>✓ Aprovado ANVISA</span>
             </div>
           </div>
@@ -80,7 +80,10 @@ export default function Hero() {
 
       <style>{`
         @media (max-width: 900px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+        }
+        @media (max-width: 600px) {
+          .hero-chip { display: none !important; }
         }
       `}</style>
     </section>

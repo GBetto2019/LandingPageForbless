@@ -26,7 +26,7 @@ const phases = [
 
 export default function Timeline() {
   return (
-    <section style={{ background: 'var(--fg-cream)', padding: '100px 0' }}>
+    <section className="section-py" style={{ background: 'var(--fg-cream)' }}>
       <div className="wrap">
         <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 64px' }}>
           <span className="eyebrow">A jornada completa</span>

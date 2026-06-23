@@ -24,7 +24,7 @@ const ingredients = [
 
 export default function Ingredients() {
   return (
-    <section style={{ background: 'var(--fg-sand)', padding: '100px 0' }}>
+    <section className="section-py" style={{ background: 'var(--fg-sand)' }}>
       <div className="wrap">
         <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', alignItems: 'end', gap: 40, marginBottom: 56 }} className="ing-head">
           <div>
@@ -40,7 +40,7 @@ export default function Ingredients() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }} className="ing-cards">
           {ingredients.map(ing => (
-            <div key={ing.name} style={{ borderRadius: 'var(--r-xl)', padding: 40, background: ing.bg, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: 340, position: 'relative', overflow: 'hidden' }}>
+            <div key={ing.name} className="ing-card" style={{ borderRadius: 'var(--r-xl)', padding: 40, background: ing.bg, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: 340, position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: -40, right: -40, width: 160, height: 160, background: 'radial-gradient(circle, rgba(255,255,255,0.25), transparent 65%)' }} />
               <div>
                 <div style={{ width: 56, height: 56, background: 'rgba(255,255,255,0.5)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 28, marginBottom: 28 }}>{ing.icon}</div>
@@ -55,7 +55,10 @@ export default function Ingredients() {
           ))}
         </div>
       </div>
-      <style>{`@media(max-width:768px){.ing-cards{grid-template-columns:1fr!important}.ing-head{grid-template-columns:1fr!important}}`}</style>
+      <style>{`
+        @media(max-width:768px){.ing-cards{grid-template-columns:1fr!important}.ing-head{grid-template-columns:1fr!important}}
+        @media(max-width:600px){.ing-card{min-height:260px!important;padding:28px!important}}
+      `}</style>
     </section>
   );
 }
