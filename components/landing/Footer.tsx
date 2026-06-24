@@ -13,7 +13,7 @@ export default function Footer() {
 
           <div style={{ marginTop: 20 }}>
             <a
-              href="https://instagram.com/forblesscosmeticos"
+              href="https://www.instagram.com/forbless.cosmeticos"
               target="_blank"
               rel="noopener noreferrer"
               style={{ width: 40, height: 40, borderRadius: '50%', border: '1px solid rgba(251,246,238,0.25)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-ui)', fontSize: 10, fontWeight: 700, color: 'var(--fg-cream)' }}
