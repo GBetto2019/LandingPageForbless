@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 
 const CHECKOUT_URL =
   process.env.NEXT_PUBLIC_SHOPIFY_CHECKOUT_URL ??
@@ -177,9 +178,9 @@ export default function ChatWidget() {
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 20px', background: 'var(--fg-green-900)', borderRadius: 'var(--r-xl) var(--r-xl) 0 0', flexShrink: 0 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <div style={{ width: 42, height: 42, borderRadius: '50%', background: 'linear-gradient(135deg, var(--fg-cyan-600), var(--fg-green-700))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 20, color: 'var(--fg-cream)', position: 'relative', flexShrink: 0 }}>
-              F
-              <span style={{ position: 'absolute', bottom: 1, right: 1, width: 10, height: 10, borderRadius: '50%', background: '#22C55E', border: '2px solid var(--fg-green-900)' }} />
+            <div style={{ width: 42, height: 42, borderRadius: '50%', overflow: 'hidden', position: 'relative', flexShrink: 0 }}>
+              <Image src="/images/logo-icon-f.jpg" alt="Forbless" fill style={{ objectFit: 'cover' }} />
+              <span style={{ position: 'absolute', bottom: 1, right: 1, width: 10, height: 10, borderRadius: '50%', background: '#22C55E', border: '2px solid var(--fg-green-900)', zIndex: 1 }} />
             </div>
             <div>
               <div style={{ fontFamily: 'var(--font-ui)', fontSize: 13, fontWeight: 600, color: 'var(--fg-cream)' }}>Especialista Forbless</div>
@@ -202,9 +203,15 @@ export default function ChatWidget() {
         >
           {messages.map((m, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-end', flexDirection: m.role === 'user' ? 'row-reverse' : 'row' }}>
-              <div style={{ width: 30, height: 30, borderRadius: '50%', flexShrink: 0, background: m.role === 'agent' ? 'linear-gradient(135deg, var(--fg-cyan-600), var(--fg-green-700))' : 'var(--fg-green-300)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: m.role === 'agent' ? 'var(--font-display)' : 'var(--font-ui)', fontStyle: m.role === 'agent' ? 'italic' : 'normal', fontSize: m.role === 'agent' ? 13 : 10, color: m.role === 'agent' ? 'var(--fg-cream)' : 'var(--fg-green-900)', fontWeight: m.role === 'user' ? 700 : 400 }}>
-                {m.role === 'agent' ? 'F' : 'Eu'}
-              </div>
+              {m.role === 'agent' ? (
+                <div style={{ width: 30, height: 30, borderRadius: '50%', overflow: 'hidden', position: 'relative', flexShrink: 0 }}>
+                  <Image src="/images/logo-icon-f.jpg" alt="Forbless" fill style={{ objectFit: 'cover' }} />
+                </div>
+              ) : (
+                <div style={{ width: 30, height: 30, borderRadius: '50%', flexShrink: 0, background: 'var(--fg-green-300)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-ui)', fontSize: 10, color: 'var(--fg-green-900)', fontWeight: 700 }}>
+                  Eu
+                </div>
+              )}
               <div style={{ maxWidth: '82%', display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {(m.text || m.streaming) && (
                   <div style={{ padding: '12px 16px', borderRadius: m.role === 'agent' ? '18px 18px 18px 4px' : '18px 18px 4px 18px', fontFamily: 'var(--font-body)', fontSize: 13, lineHeight: 1.55, color: m.role === 'agent' ? 'var(--fg-ink-2)' : 'var(--fg-cream)', background: m.role === 'agent' ? 'var(--fg-green-100)' : 'var(--fg-green-900)', whiteSpace: 'pre-line', minHeight: 20 }}>
