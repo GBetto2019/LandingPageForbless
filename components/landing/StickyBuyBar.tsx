@@ -40,7 +40,9 @@ export default function StickyBuyBar({ targetISO }: { targetISO?: string }) {
     <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 80, background: 'var(--fg-paper)', borderTop: '1px solid var(--fg-line)', boxShadow: '0 -8px 32px rgba(7,41,42,0.12)', transform: visible ? 'translateY(0)' : 'translateY(100%)', transition: 'transform 0.4s var(--ease-out)' }}>
       <div className="wrap sticky-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 48px', gap: 24, flexWrap: 'wrap' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }} className="sticky-product">
-          <div style={{ width: 40, height: 40, borderRadius: 'var(--r-sm)', background: 'linear-gradient(155deg, var(--fg-green-100), var(--fg-cyan-300))' }} />
+          <div style={{ width: 40, height: 40, borderRadius: 'var(--r-sm)', background: 'linear-gradient(155deg, var(--fg-green-800), var(--fg-cyan-600))', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 22, fontWeight: 600, color: 'var(--fg-cream)', lineHeight: 1 }}>F</span>
+          </div>
           <div>
             <div style={{ fontFamily: 'var(--font-ui)', fontSize: 13, fontWeight: 600, color: 'var(--fg-green-900)' }}>Forbless Hair, Skin &amp; Nails</div>
             <div style={{ fontFamily: 'var(--font-ui)', fontSize: 11, color: 'var(--fg-ink-3)' }}>Kit 90 dias · 3 potes</div>
