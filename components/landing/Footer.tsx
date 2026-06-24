@@ -1,26 +1,16 @@
+import Image from 'next/image';
+
 export default function Footer() {
   return (
     <footer className="site-footer" style={{ background: 'var(--fg-green-900)', color: 'var(--fg-cream)', padding: '72px 0 32px' }}>
       <style>{`@media(max-width:640px){.site-footer{padding:48px 0 32px!important}.site-footer .wrap>div:first-child{padding-bottom:32px!important}}`}</style>
       <div className="wrap">
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', paddingBottom: 40, borderBottom: '1px solid rgba(251,246,238,0.1)' }}>
-          {/* Logo fallback */}
-          <div style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 28, color: 'var(--fg-cream)', marginBottom: 14 }}>Forbless</div>
+          <Image src="/images/logo-branco.png" alt="Forbless" width={160} height={48} style={{ objectFit: 'contain', marginBottom: 14 }} />
 
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(251,246,238,0.6)', lineHeight: 1.6, maxWidth: 440, textAlign: 'center' }}>
             Força e beleza de dentro para fora. Suplementação com base científica para cabelos, pele e unhas mais fortes.
           </p>
-
-          <div style={{ marginTop: 20 }}>
-            <a
-              href="https://www.instagram.com/forbless.cosmeticos"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ width: 40, height: 40, borderRadius: '50%', border: '1px solid rgba(251,246,238,0.25)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-ui)', fontSize: 10, fontWeight: 700, color: 'var(--fg-cream)' }}
-            >
-              IG
-            </a>
-          </div>
 
           <p style={{ fontFamily: 'var(--font-ui)', fontSize: 10, color: 'rgba(251,246,238,0.35)', lineHeight: 1.6, maxWidth: 580, textAlign: 'center', marginTop: 28 }}>
             *Suplemento alimentar. Não substitui alimentação equilibrada nem acompanhamento médico. Resultados podem variar. Informação baseada em evidência científica aprovada pela ANVISA.
