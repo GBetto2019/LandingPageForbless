@@ -1,3 +1,4 @@
+import { supabaseAdmin } from '@/lib/supabase';
 import CountdownBar from '@/components/landing/CountdownBar';
 import Hero from '@/components/landing/Hero';
 import TrustStrip from '@/components/landing/TrustStrip';
@@ -14,10 +15,22 @@ import Footer from '@/components/landing/Footer';
 import ChatWidget from '@/components/chat/ChatWidget';
 import StickyBuyBar from '@/components/landing/StickyBuyBar';
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  let countdownTarget: string | undefined;
+  try {
+    const { data } = await supabaseAdmin
+      .from('config')
+      .select('value')
+      .eq('key', 'countdown_target')
+      .maybeSingle();
+    countdownTarget = data?.value ?? undefined;
+  } catch {
+    // config table may not exist yet — CountdownBar uses its built-in default
+  }
+
   return (
     <>
-      <CountdownBar />
+      <CountdownBar targetISO={countdownTarget} />
       {/* Sentinel div used by StickyBuyBar IntersectionObserver */}
       <div className="hero-sentinel" />
       <Hero />
@@ -33,7 +46,7 @@ export default function LandingPage() {
       <FAQ />
       <Footer />
       <ChatWidget />
-      <StickyBuyBar />
+      <StickyBuyBar targetISO={countdownTarget} />
     </>
   );
 }
