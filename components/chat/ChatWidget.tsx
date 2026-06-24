@@ -178,9 +178,11 @@ export default function ChatWidget() {
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 20px', background: 'var(--fg-green-900)', borderRadius: 'var(--r-xl) var(--r-xl) 0 0', flexShrink: 0 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <div style={{ width: 42, height: 42, borderRadius: '50%', overflow: 'hidden', position: 'relative', flexShrink: 0 }}>
-              <Image src="/images/logo-icon-f.jpg" alt="Forbless" fill style={{ objectFit: 'cover' }} />
-              <span style={{ position: 'absolute', bottom: 1, right: 1, width: 10, height: 10, borderRadius: '50%', background: '#22C55E', border: '2px solid var(--fg-green-900)', zIndex: 1 }} />
+            <div style={{ position: 'relative', flexShrink: 0, width: 42, height: 42 }}>
+              <div style={{ width: 42, height: 42, borderRadius: '50%', overflow: 'hidden', position: 'relative' }}>
+                <Image src="/images/logo-icon-f.jpg" alt="Forbless" fill style={{ objectFit: 'cover' }} />
+              </div>
+              <span style={{ position: 'absolute', bottom: 1, right: 1, width: 10, height: 10, borderRadius: '50%', background: '#22C55E', border: '2px solid var(--fg-green-900)' }} />
             </div>
             <div>
               <div style={{ fontFamily: 'var(--font-ui)', fontSize: 13, fontWeight: 600, color: 'var(--fg-cream)' }}>Especialista Forbless</div>
