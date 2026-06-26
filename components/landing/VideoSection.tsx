@@ -16,17 +16,13 @@ export default function VideoSection() {
           </div>
 
           <div className="video-media" style={{ aspectRatio: '16/9', borderRadius: 'var(--r-xl)', overflow: 'hidden', position: 'relative', background: 'var(--fg-green-900)' }}>
-            <video
-              controls
-              preload="metadata"
-              poster="/images/video-poster.webp"
-              style={{ width: '100%', height: '100%', display: 'block', objectFit: 'cover' }}
-            >
-              <source src="/video/campanha-forbless.mp4" type="video/mp4" />
-            </video>
-            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'rgba(7,41,42,0.7)', backdropFilter: 'blur(4px)', padding: '8px 16px', fontFamily: 'var(--font-ui)', fontSize: 9, color: 'rgba(251,246,238,0.6)', textAlign: 'center', letterSpacing: '0.06em' }}>
-              Resultados podem variar · Depoimento real com autorização de uso de imagem
-            </div>
+            <iframe
+              src="https://www.youtube.com/embed/UVjLfEKyH6w?rel=0&modestbranding=1"
+              title="Forbless — Depoimento 90 dias"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
+            />
           </div>
         </div>
       </div>
